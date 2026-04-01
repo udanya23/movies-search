@@ -1,50 +1,82 @@
 [
     {
         "id": 1,
-        "name":"Darling",
-        "category":"Romance",
-        "year":2025
+        "name": "Darling",
+        "category": "Romance",
+        "year": 2025,
+        "rating": 7.8,
+        "description": "A heartfelt romance that blossoms unexpectedly between two strangers in the quiet lanes of a coastal town.",
+        "language": "Telugu",
+        "duration": "2h 21m"
     },
     {
         "id": 2,
-        "name":"Ante Sundaraniki",
-        "category":"RomCom",
-        "year":2015
+        "name": "Ante Sundaraniki",
+        "category": "RomCom",
+        "year": 2022,
+        "rating": 7.4,
+        "description": "A charming rom-com about an inter-religious couple navigating the chaos of planning their wedding behind their parents' backs.",
+        "language": "Telugu",
+        "duration": "2h 28m"
     },
     {
         "id": 3,
-        "name":"OG",
-        "category":"Action",
-        "year":2025
+        "name": "OG",
+        "category": "Action",
+        "year": 2025,
+        "rating": 8.1,
+        "description": "A high-octane action thriller about an undercover agent who infiltrates the most dangerous criminal syndicate in South Asia.",
+        "language": "Telugu",
+        "duration": "2h 44m"
     },
     {
         "id": 4,
-        "name":"War",
-        "category":"Action",
-        "year":2021
+        "name": "War",
+        "category": "Action",
+        "year": 2019,
+        "rating": 6.5,
+        "description": "An Indian agent is assigned to eliminate his former mentor who has gone rogue, but nothing is what it seems.",
+        "language": "Hindi",
+        "duration": "2h 34m"
     },
     {
         "id": 5,
-        "name":"Nagavalli",
-        "category":"Horror",
-        "year":2025
+        "name": "Nagavalli",
+        "category": "Horror",
+        "year": 2010,
+        "rating": 7.1,
+        "description": "A psychiatrist encounters a mysterious patient who claims to be possessed by the ghost of a classical dancer from decades past.",
+        "language": "Telugu",
+        "duration": "2h 37m"
     },
     {
         "id": 6,
-        "name":"Radhe Shyam",
-        "category":"Romance",
-        "year":2021
+        "name": "Radhe Shyam",
+        "category": "Romance",
+        "year": 2022,
+        "rating": 6.8,
+        "description": "A palm reader who does not believe in love falls for a passionate young woman in a sweeping 1970s European backdrop.",
+        "language": "Telugu",
+        "duration": "2h 35m"
     },
     {
         "id": 7,
-        "name":"Chandramukhi",
-        "category":"Horror",
-        "year":2025
+        "name": "Chandramukhi",
+        "category": "Horror",
+        "year": 2005,
+        "rating": 7.9,
+        "description": "A psychiatrist investigates the mystery of a haunted mansion and uncovers a centuries-old tragedy rooted in betrayal and love.",
+        "language": "Tamil",
+        "duration": "2h 47m"
     },
     {
         "id": 8,
-        "name":"Masooda",
-        "category":"Horror",
-        "year":2021
+        "name": "Masooda",
+        "category": "Horror",
+        "year": 2022,
+        "rating": 8.3,
+        "description": "A raw and terrifying story of a single mother and her daughter haunted by a demonic entity from their past.",
+        "language": "Telugu",
+        "duration": "2h 10m"
     }
 ]

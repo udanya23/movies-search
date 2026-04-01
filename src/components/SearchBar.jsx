@@ -1,19 +1,16 @@
 import React from 'react'
 
-export default function SearchBar({searchTerm,setSearchTerm}) {
+export default function SearchBar({ searchTerm, setSearchTerm }) {
   return (
-    <>
-      <input type="text"
-      placeholder='Enter movie name'
-      value={searchTerm}
-      onChange={(e)=>setSearchTerm(e.target.value)}
-      style={{
-        padding:"10px",
-        borderRadius:"10px",
-        width:"25%",
-        fontSize:"1.2rem"
-      }}
+    <div className="search-minimal">
+      <input
+        type="text"
+        className="search-input-minimal"
+        placeholder="Search database by title..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        autoFocus
       />
-    </>
+    </div>
   )
 }

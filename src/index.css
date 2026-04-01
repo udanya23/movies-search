@@ -1,68 +1,270 @@
+/* ===================================================
+   CineFind — Minimalist Database Design
+   (Dark Mode, Typography-First)
+   =================================================== */
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --bg: #0d1117;           /* GitHub Dark */
+  --bg-surface: #161b22;
+  --bg-card: #21262d;
+  --border: #30363d;
+  --border-active: #58a6ff;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --text-primary: #c9d1d9;
+  --text-secondary: #8b949e;
+  --text-mono: #58a6ff;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --accent: #58a6ff;
+  --accent-soft: rgba(88, 166, 255, 0.1);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  --radius: 6px;
+  --transition: 150ms ease-out;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* --- Base --- */
 body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout --- */
+.container-custom {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.header-simple {
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  margin-bottom: 3rem;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.brand {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--accent);
+  text-decoration: none;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* --- Search & Filter --- */
+.controls-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.search-minimal {
+  width: 100%;
+  max-width: 600px;
+}
+
+.search-input-minimal {
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.search-input-minimal:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.filter-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: var(--transition);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.filter-btn:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- Grid & Cards --- */
+.movie-grid-minimal {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.movie-card-minimal {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card-minimal:hover {
+  border-color: var(--text-secondary);
+  transform: translateY(-2px);
+}
+
+/* Typography-First "Poster" */
+.typo-poster {
+  height: 180px;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.poster-letter {
+  font-family: var(--font-mono);
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--border);
+  opacity: 0.5;
+}
+
+.poster-year {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+.card-content-minimal {
+  padding: 1.25rem;
+}
+
+.card-category-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.card-title-minimal {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  color: var(--text-primary);
+}
+
+.card-meta-minimal {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* --- Modal --- */
+.modal-overlay-minimal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content-minimal {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-inner-minimal {
+  padding: 2.5rem;
+}
+
+.modal-close-minimal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font-mono);
+}
+
+.modal-title-minimal {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.modal-desc-minimal {
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.data-row {
+  display: flex;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.data-label {
+  color: var(--text-secondary);
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.data-value {
+  color: var(--accent);
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 600px) {
+  .movie-grid-minimal { grid-template-columns: 1fr; }
+  .modal-inner-minimal { padding: 1.5rem; }
 }

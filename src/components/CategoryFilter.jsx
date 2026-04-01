@@ -1,27 +1,25 @@
 import React from 'react'
 
 export default function CategoryFilter({ categories, selectedCategory, setSelectedCategory }) {
+  const allCategories = ['ALL', ...categories]
+
   return (
-    <>
-      <select
-        style={{
-          padding: "10px",
-          borderRadius: "10px",
-          width: "25%",
-          fontSize: "1.2rem"
-        }}
-        value={selectedCategory}
-        onChange={(e) => setSelectedCategory(e.target.value)}
-      >
-        <option value="">All categories</option>
-        {
-          categories.map((i) => (
-            <option key={i} value={i}>
-              {i}
-            </option>
-          ))
-        }
-      </select>
-    </>
+    <div className="filter-row" role="group" aria-label="Genre selection">
+      {allCategories.map((cat) => {
+        const value = cat === 'ALL' ? '' : cat
+        const isActive = selectedCategory === value
+        
+        return (
+          <button
+            key={cat}
+            className={`filter-btn ${isActive ? 'active' : ''}`}
+            onClick={() => setSelectedCategory(value)}
+            aria-pressed={isActive}
+          >
+            {cat.toUpperCase()}
+          </button>
+        )
+      })}
+    </div>
   )
 }
