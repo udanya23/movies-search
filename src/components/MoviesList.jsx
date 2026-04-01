@@ -37,9 +37,10 @@ export default function MoviesList() {
   return (
     <div className="container-custom">
       <header className="header-simple">
-        <a href="/" className="brand">CINE_DATABASE v1.0</a>
-        <div className="card-meta-minimal" style={{ fontSize: '0.7rem' }}>
-          LOCAL_STORAGE: {movies.length} RECORDS
+        <a href="/" className="brand">CINE_DASHBOARD <span style={{ opacity: 0.3, fontWeight: 400 }}>v1.1</span></a>
+        <div style={{ display: 'flex', gap: '2rem', fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-secondary)' }}>
+          <div>DATABASE_CONNECTED</div>
+          <div style={{ color: 'var(--accent)' }}>RECORDS: {movies.length}</div>
         </div>
       </header>
 
@@ -54,8 +55,8 @@ export default function MoviesList() {
         </section>
 
         {filteredMovies.length === 0 ? (
-          <div style={{ padding: '4rem 0', textAlign: 'center', opacity: 0.5, fontFamily: 'var(--font-mono)' }}>
-            [ ERROR ] NO_MOVIES_FOUND_MATCHING_YOUR_QUERY
+          <div style={{ padding: '8rem 0', textAlign: 'center', opacity: 0.3, fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>
+            [ ERROR ] NO_RECORDS_MATCH_THE_CURRENT_FILTER
           </div>
         ) : (
           <div className="movie-grid-minimal" role="list">
@@ -70,8 +71,9 @@ export default function MoviesList() {
         )}
       </main>
 
-      <footer style={{ marginTop: '5rem', padding: '2rem 0', borderTop: '1px solid var(--border)', opacity: 0.3, fontSize: '0.7rem', fontFamily: 'var(--font-mono)' }}>
-        DESIGNED_BY_DEV // NO_IMAGES_REQUIRED_BY_DESIGN
+      <footer style={{ marginTop: '10rem', padding: '3rem 0', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', opacity: 0.25, fontSize: '0.65rem', fontFamily: 'var(--font-mono)' }}>
+        <div>CINE_DASHBOARD // DATA_EXPLORER</div>
+        <div style={{ letterSpacing: '2px' }}>DESIGN_SYSTEM_ALPHA</div>
       </footer>
 
       {selectedMovie && (
